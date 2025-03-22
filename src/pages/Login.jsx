@@ -216,7 +216,7 @@ const FooterLink = styled(Link)`
   }
 `
 
-const AlertMessage = styled.div<{ type: 'error' | 'success' }>`
+const AlertMessage = styled.div`
   padding: 0.75rem 1rem;
   border-radius: 0.375rem;
   margin-bottom: 1.5rem;
@@ -228,7 +228,7 @@ const Login = () => {
   const { login, error } = useAuth()
   const navigate = useNavigate()
   const [loginSuccess, setLoginSuccess] = useState(false)
-  const [userType, setUserType] = useState<'patient' | 'clinician'>('patient')
+  const [userType, setUserType] = useState('patient')
   
   // Form validation schema
   const validationSchema = Yup.object().shape({
@@ -247,7 +247,7 @@ const Login = () => {
   }
   
   // Handle form submission
-  const handleSubmit = async (values: { email: string, password: string }, { setSubmitting }: any) => {
+  const handleSubmit = async (values, { setSubmitting }) => {
     try {
       await login(values.email, values.password)
       setLoginSuccess(true)

@@ -7,6 +7,7 @@ import DoctorDashboard from './pages/DoctorDashboard'
 import Login from './pages/Login'
 import NotFound from './pages/NotFound'
 import PatientDashboard from './pages/PatientDashboard'
+import Register from './pages/Register'
 
 // Components
 import Layout from './components/Layout'
@@ -16,8 +17,9 @@ function App() {
 
   return (
     <Routes>
-      {/* Public route */}
+      {/* Public routes */}
       <Route path="/login" element={!user ? <Login /> : <Navigate to="/dashboard" />} />
+      <Route path="/register" element={!user ? <Register /> : <Navigate to="/dashboard" />} />
       
       {/* Demo routes without authentication for easier testing */}
       <Route element={<Layout />}>
