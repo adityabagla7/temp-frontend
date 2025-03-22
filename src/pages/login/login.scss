@@ -1,0 +1,71 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #e0e7ff; /* Light blue background */
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-header h1 {
+  font-size: 24px;
+  color: #333; /* Dark text color */
+}
+
+.login-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.login-section {
+  flex: 1;
+  padding: 40px;
+  text-align: center;
+}
+
+.login-section h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333; /* Dark text color */
+}
+
+.login-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555; /* Medium dark text color */
+}
+
+.login-button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue button */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.login-section a {
+  color: #007bff; /* Blue link */
+  text-decoration: none;
+}
+
+.login-section a:hover {
+  text-decoration: underline;
+}
