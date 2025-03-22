@@ -1,83 +1,81 @@
+$navbar-height: 50px;
+$big-logo-padding: 15px;
+$small-logo-padding: 2px;
 
 .navbar {
-  @include themify($themes) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    height: 50px;
-    border-bottom: 1px solid themed("border");
-    position: sticky;
-    top: 0;
-    background-color: themed("bg");
-    color:themed("textColor");
-    z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: $navbar-height;
+  transition: background 0.3s, box-shadow 0.3s;
+}
 
-    .left {
-      display: flex;
-      align-items: center;
-      gap: 30px;
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
 
-      span {
-        font-weight: bold;
-        font-size: 20px;
-        color: themed("logo");
-      }
+.navbarHeader {
+  display: flex;
+  align-items: center;
+}
 
-      .search {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        border: 1px solid themed("border");
-        border-radius: 5px;
-        padding: 5px;
+.navbarToggle {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
 
-        input {
-          border: none;
-          width: 500px;
-          background-color: transparent;
-          color: themed("textColor");
+.smallLogoContainer {
+  position: absolute;
+  height: $navbar-height;
+  overflow: hidden;
+}
 
-          @include mobile{
-            display: none;
-          }
+.smallLogo {
+  color: white;
+  font-size: 2.5em;
+  padding-bottom: $small-logo-padding;
+}
 
-          @include tablet{
-            width: 200px;
-          }
-        }
-      }
-    }
+.navbarNav {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
-    .right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
+  li {
+    margin-left: 15px;
+  }
 
-      @include mobile{
-        display: none;
-      }
-
-      .user {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 500;
-
-        @include tablet{
-          display: none;
-        }
-
-        img {
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          object-fit: cover;
-        }
-
-        span {
-        }
-      }
+  a {
+    color: black;
+    text-decoration: none;
+    
+    &:hover {
+      color: #22F;
     }
   }
+}
+
+.bigLogoRow {
+  background: gold;
+  text-align: center;
+  padding: 50px 0;
+
+  .bigLogo {
+    font-size: 6.5em;
+    margin: 0;
+    padding-bottom: $big-logo-padding;
+
+    @media (min-width: 400px) { font-size: 4.5em; }
+    @media (min-width: 768px) { font-size: 9em; padding-bottom: $big-logo-padding * 2; }
+    @media (min-width: 1200px) { font-size: 12em; }
+  }
+}
+
+.content {
+  padding: 20px;
 }
